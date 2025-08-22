@@ -1,0 +1,14 @@
+class Solution {
+public:
+    string toLowerCase(string s) {
+          int size = s.size();
+    for(int i=0;i<size;i++){
+       if(s[i] >= 65 && s[i] <= 90){
+            s[i] = s[i] + 32;
+        }else{
+            s[i] = s[i];
+        }
+    }
+        return s;
+    }
+};
