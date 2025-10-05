@@ -17,17 +17,16 @@ public:
 
         while(temp!=nullptr){
             size++;
-            temp=temp->next;
-            
+            temp = temp->next;
         }
 
         ListNode* temp1 = head;
-        while(temp1 != nullptr){
+        while(temp1!=nullptr){
             if(temp1->val != 0){
-                sum = sum + pow(2,size-1);
+                sum += pow(2,size-1);
             }
             size--;
-            temp1 = temp1->next;
+            temp1 = temp1 -> next;
         }
         return sum;
     }
