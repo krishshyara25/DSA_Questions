@@ -8,9 +8,8 @@ public:
             if(nums[i] == 1){
                 count++;
                 maxcount = max(count,maxcount);
-            }else{
-                count = 0;
             }
+            if(nums[i]==0) count = 0;
         }
         return maxcount;
     }
