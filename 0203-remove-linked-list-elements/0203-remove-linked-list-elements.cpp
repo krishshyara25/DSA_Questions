@@ -11,21 +11,23 @@
 class Solution {
 public:
     ListNode* removeElements(ListNode* head, int val) {
-        // Remove any nodes at the start that match val
-        while (head != nullptr && head->val == val) {
+        
+        while(head && head->val == val){
+            ListNode*curr = head;
             head = head->next;
+            delete curr;
         }
-
-        // Now remove from the rest of the list
+        
         ListNode* temp = head;
-        while (temp != nullptr && temp->next != nullptr) {
-            if (temp->next->val == val) {
+        while(temp && temp->next){
+            if(temp->next->val == val){
+                ListNode* curr = temp->next;
                 temp->next = temp->next->next;
-            } else {
-                temp = temp->next;
+                delete curr;
             }
+            else
+            temp = temp->next;
         }
-
         return head;
     }
 };
