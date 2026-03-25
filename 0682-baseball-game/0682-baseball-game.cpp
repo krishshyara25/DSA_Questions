@@ -3,17 +3,15 @@ public:
     int calPoints(vector<string>& operations) {
         stack<int> st;
         for(int i = 0; i<operations.size(); i++){
-            int sum = 0;
             if(operations[i] == "C"){
                 st.pop();
             }else if(operations[i] == "D"){
                 st.push( st.top()*2);
             }else if(operations[i] == "+"){
-                int temp = st.top();
-                sum += temp;
+                int top1 = st.top();
                 st.pop();
-                sum += st.top();
-                st.push(temp);
+                int sum = top1 + st.top();
+                st.push(top1);
                 st.push(sum);
             }else{
                 st.push(stoi(operations[i]));
